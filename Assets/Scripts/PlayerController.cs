@@ -10,18 +10,21 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject _visual;
     [SerializeField]
+    private GameObject fist;
+    [SerializeField]
     private Sprite _playerAttack;
     [SerializeField]
     private Sprite _playerNeutral;
+    [SerializeField]
+    private float _punchCooldown = .5f;
 
+    private bool _hasPunched = false;
     private TypeObjet? currentItem = null;
 
     private Vector2 directionLook;
 
     Rigidbody2D body;
 
-    [SerializeField]
-    private GameObject fist;
 
     // Start is called before the first frame update
     void Start()
@@ -59,12 +62,15 @@ public class PlayerController : MonoBehaviour
 
         body.MovePosition(newPos);
 
-        if(Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
-            StartCoroutine(Attack());
+            if (!_hasPunched)
+            {
+                StartCoroutine(Attack());
+            }
         }
     }
-
+    #region TakeItem
     public void TakeItem(ObjetController objet)
     {
 
@@ -75,7 +81,8 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Currently holding an item");
         }
     }
-
+    #endregion
+    #region DeliverItem
     public void DeliverItem()
     {
         if (currentItem != null)
@@ -84,13 +91,18 @@ public class PlayerController : MonoBehaviour
             currentItem = null;
         }
     }
-
+    #endregion
+    #region Attack
     private IEnumerator Attack()
     {
+        _hasPunched = true;
         _visual.GetComponent<SpriteRenderer>().sprite = _playerAttack;
         fist.SetActive(true);
         yield return new WaitForSeconds(.5f);
         fist.SetActive(false);
         _visual.GetComponent<SpriteRenderer>().sprite = _playerNeutral;
+        yield return new WaitForSeconds(_punchCooldown);
+        _hasPunched = false;
     }
+    #endregion
 }

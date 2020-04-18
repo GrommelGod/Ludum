@@ -49,9 +49,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   _visual: {fileID: 5309523103642457438}
+  fist: {fileID: 6591769814669692247}
   _playerAttack: {fileID: 21300000, guid: 27944278693c0024387a91ee3969d057, type: 3}
   _playerNeutral: {fileID: 21300000, guid: 2f58397868108b94a8144837dce4e2a9, type: 3}
-  fist: {fileID: 6591769814669692247}
+  _punchCooldown: 0.5
 --- !u!50 &4399032720645403417
 Rigidbody2D:
   serializedVersion: 4
@@ -86,7 +87,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.12494597, y: 0.1208716}
+  m_Offset: {x: -0.24476731, y: -0.0073179603}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -97,7 +98,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.40243226, y: 0.39428365}
+  m_Size: {x: 0.54201436, y: 1.0169147}
   m_EdgeRadius: 0
 --- !u!1 &5309523103642457438
 GameObject:
