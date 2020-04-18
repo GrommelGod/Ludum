@@ -5,9 +5,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     [SerializeField]
     private int speed;
+    [SerializeField]
+    private GameObject _visual;
+    [SerializeField]
+    private Sprite _playerAttack;
+    [SerializeField]
+    private Sprite _playerNeutral;
 
     private TypeObjet? currentItem = null;
 
@@ -31,6 +36,10 @@ public class PlayerController : MonoBehaviour
 
         body.MovePosition(newPos);
 
+        if(Input.GetButtonDown("Fire1"))
+        {
+            StartCoroutine(Attack());
+        }
     }
 
     public void TakeItem(ObjetController objet)
@@ -51,5 +60,12 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Dropping item");
             currentItem = null;
         }
+    }
+
+    private IEnumerator Attack()
+    {
+        _visual.GetComponent<SpriteRenderer>().sprite = _playerAttack;
+        yield return new WaitForSeconds(.5f);
+        _visual.GetComponent<SpriteRenderer>().sprite = _playerNeutral;
     }
 }
