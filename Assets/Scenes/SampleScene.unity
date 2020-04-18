@@ -1361,10 +1361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379c6def260e5fa4c89230d6580e76a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lifes:
-  - {fileID: 447962678}
-  - {fileID: 1358618440}
-  - {fileID: 588611800}
+  _lifes: []
   _lifePoints: 3
 --- !u!4 &1600883373 stripped
 Transform:
@@ -1796,6 +1793,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1757521001454942594, guid: bb94eb94a5f861f4db661e0b1d2eff4c,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.08322501
+      objectReference: {fileID: 0}
+    - target: {fileID: 1757521001454942594, guid: bb94eb94a5f861f4db661e0b1d2eff4c,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.6138473
+      objectReference: {fileID: 0}
     - target: {fileID: 1757521001454942595, guid: bb94eb94a5f861f4db661e0b1d2eff4c,
         type: 3}
       propertyPath: m_Name
@@ -1934,11 +1941,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5309523103352686710, guid: d4527c946297eb0438c681376f792559,
-        type: 3}
-      propertyPath: _drop
-      value: 
-      objectReference: {fileID: 1538847955}
     - target: {fileID: 5309523103352686711, guid: d4527c946297eb0438c681376f792559,
         type: 3}
       propertyPath: m_Name
