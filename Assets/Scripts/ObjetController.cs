@@ -17,12 +17,9 @@ public class ObjetController : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void SetItemType(TypeObjet type)
     {
-        var types = Enum.GetValues(typeof(TypeObjet)).Cast<TypeObjet>().ToArray();
-        var randGen = UnityEngine.Random.Range(0, types.Count());
-        currentType = types[randGen];
+        currentType = type;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
