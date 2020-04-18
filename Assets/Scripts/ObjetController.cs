@@ -8,6 +8,12 @@ using UnityEngine;
 public class ObjetController : MonoBehaviour
 {
 
+    [SerializeField]
+    private GameObject sprite;
+
+    [SerializeField]
+    private Sprite[] spritesPossibles;
+
     private TypeObjet currentType;
     public TypeObjet ObjectType
     {
@@ -20,6 +26,11 @@ public class ObjetController : MonoBehaviour
     public void SetItemType(TypeObjet type)
     {
         currentType = type;
+        var winningSprite = spritesPossibles.Where(s => s.name == type.ToString()).FirstOrDefault();
+        if (winningSprite != null)
+        {
+            sprite.GetComponent<SpriteRenderer>().sprite = winningSprite;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -8,9 +8,9 @@ namespace Assets.Scripts.Enums
 {
     public enum TypeObjet
     {
-        PQ,
-        Oeuf,
-        Farine,
+        ToiletPaper,
+        Eggs,
+        Noodles,
         Masque,
     }
 }
