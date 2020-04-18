@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Enums;
+using Assets.Scripts.Models;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -86,7 +87,30 @@ public class PlayerController : MonoBehaviour
     {
         if (currentItem != null)
         {
-            Debug.Log("Dropping item");
+
+            float pointsWinned = 0;
+
+            switch(currentItem.Value)
+            {
+                case TypeObjet.Eggs:
+                    pointsWinned = .5f;
+                    break;
+                case TypeObjet.Flour:
+                    pointsWinned = .2f;
+                    break;
+                case TypeObjet.Mask:
+                    pointsWinned = 1f;
+                    break;
+                case TypeObjet.Noodles:
+                    pointsWinned = 1f;
+                    break;
+                case TypeObjet.ToiletPaper:
+                    pointsWinned = 14f;
+                    break;
+            }
+
+            GameStats.Instance.points += pointsWinned;
+
             currentItem = null;
         }
     }
