@@ -36,6 +36,11 @@ public class DropzoneController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        OnTriggerEnter2D(collision.collider);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var player = collision.GetComponent<PlayerController>();
@@ -58,6 +63,8 @@ public class DropzoneController : MonoBehaviour
             }
         }
     }
+
+
 
     private void GameOver()
     {
