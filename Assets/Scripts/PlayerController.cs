@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D body;
 
+    [SerializeField]
+    private GameObject itemDisplayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,10 +54,19 @@ public class PlayerController : MonoBehaviour
         if (directionLook.x < 0)
         {
             _visual.GetComponent<SpriteRenderer>().flipX = true;
+
+            var itemPos = itemDisplayer.transform.position;
+            itemPos.x = transform.position.x -0.6f;
+            itemDisplayer.transform.position = itemPos;
         }
         else
         {
             _visual.GetComponent<SpriteRenderer>().flipX = false;
+
+            var itemPos = itemDisplayer.transform.position;
+            itemPos.x = transform.position.x + 0.6f;
+            itemDisplayer.transform.position = itemPos;
+
         }
 
         Vector2 originPos = body.position;
@@ -71,12 +83,15 @@ public class PlayerController : MonoBehaviour
         }
     }
     #region TakeItem
-    public void TakeItem(ObjetController objet)
+    public void TakeItem(ObjetController objet, Sprite itemSprite)
     {
 
         if (currentItem == null)
         {
             currentItem = objet.ObjectType;
+
+            itemDisplayer.GetComponent<SpriteRenderer>().sprite = itemSprite;
+
             Destroy(objet.gameObject);
             Debug.Log("Currently holding an item");
         }
@@ -110,7 +125,7 @@ public class PlayerController : MonoBehaviour
             }
 
             GameStats.Instance.points += pointsWinned;
-
+            itemDisplayer.GetComponent<SpriteRenderer>().sprite = null;
             currentItem = null;
         }
     }

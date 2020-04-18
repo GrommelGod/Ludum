@@ -14,6 +14,8 @@ public class ObjetController : MonoBehaviour
     [SerializeField]
     private Sprite[] spritesPossibles;
 
+    private Sprite currentSprite;
+
     private TypeObjet currentType;
     public TypeObjet ObjectType
     {
@@ -30,6 +32,7 @@ public class ObjetController : MonoBehaviour
         if (winningSprite != null)
         {
             sprite.GetComponent<SpriteRenderer>().sprite = winningSprite;
+            currentSprite = winningSprite;
         }
     }
 
@@ -39,7 +42,7 @@ public class ObjetController : MonoBehaviour
 
         if (player != null)
         {
-            player.TakeItem(this);
+            player.TakeItem(this, currentSprite);
         }
     }
 }

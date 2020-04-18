@@ -2219,6 +2219,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4399032720645403417, guid: d4527c946297eb0438c681376f792559,
+        type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399032720645403417, guid: d4527c946297eb0438c681376f792559,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399032720645403417, guid: d4527c946297eb0438c681376f792559,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399032720645403417, guid: d4527c946297eb0438c681376f792559,
+        type: 3}
+      propertyPath: m_UseAutoMass
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399032720645403417, guid: d4527c946297eb0438c681376f792559,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399032720645403417, guid: d4527c946297eb0438c681376f792559,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5309523103352686665, guid: d4527c946297eb0438c681376f792559,
         type: 3}
       propertyPath: m_LocalPosition.x
