@@ -1361,7 +1361,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379c6def260e5fa4c89230d6580e76a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lifes: []
+  _lifes:
+  - {fileID: 447962678}
+  - {fileID: 1358618440}
+  - {fileID: 588611800}
   _lifePoints: 3
 --- !u!4 &1600883373 stripped
 Transform:
