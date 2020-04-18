@@ -1361,6 +1361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379c6def260e5fa4c89230d6580e76a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lifes: []
+  _lifePoints: 3
 --- !u!4 &1600883373 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1600565088441087458, guid: 86d32d2019827544e9e090711de5cd26,
@@ -1790,6 +1792,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1757521001454942594, guid: bb94eb94a5f861f4db661e0b1d2eff4c,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.08322501
+      objectReference: {fileID: 0}
+    - target: {fileID: 1757521001454942594, guid: bb94eb94a5f861f4db661e0b1d2eff4c,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.6138473
       objectReference: {fileID: 0}
     - target: {fileID: 1757521001454942595, guid: bb94eb94a5f861f4db661e0b1d2eff4c,
         type: 3}
