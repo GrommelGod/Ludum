@@ -11,6 +11,7 @@ namespace Assets.Scripts.Enums
         ToiletPaper,
         Eggs,
         Noodles,
-        Masque,
+        Mask,
+        Flour
     }
 }
