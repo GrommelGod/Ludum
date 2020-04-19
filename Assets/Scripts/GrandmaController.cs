@@ -7,5 +7,6 @@ public class GrandmaController : EnemyController
     public GrandmaController()
     {
         _type = Assets.Scripts.Enums.EnemyType.Grandma;
+
     }
 }

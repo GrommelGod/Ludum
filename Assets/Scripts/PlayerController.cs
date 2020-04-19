@@ -35,6 +35,9 @@ public class PlayerController : MonoBehaviour
 
     Animator animator;
 
+    [SerializeField]
+    private AudioSource _punchSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -153,6 +156,12 @@ public class PlayerController : MonoBehaviour
         _hasPunched = true;
         fist.SetActive(true);
         Debug.Log("Punch active");
+
+        if (_punchSound != null)
+        {
+            _punchSound.Play();
+        }
+
         yield return new WaitForSeconds(.2f);
         fist.SetActive(false);
         Debug.Log("Punch Disabled");

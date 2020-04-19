@@ -20,6 +20,12 @@ public class EnemySpawnerController : MonoBehaviour
     [SerializeField]
     private GameObject[] possiblePrefabs;
 
+    [SerializeField]
+    private AudioSource GrandmaDeathSound;
+
+    [SerializeField]
+    private AudioSource MaleDeathSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -117,6 +123,7 @@ public class EnemySpawnerController : MonoBehaviour
                 if (enemyPrefab != null)
                 {
                     GameObject.Instantiate(enemyPrefab, zone.transform.position, Quaternion.identity);
+                    enemyPrefab.GetComponent<EnemyController>().deathSound = chosenType == EnemyType.Grandma ? GrandmaDeathSound : MaleDeathSound;
                 }
             }
 

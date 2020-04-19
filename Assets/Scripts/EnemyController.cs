@@ -27,6 +27,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private GameObject itemPrefab;
 
+    public AudioSource deathSound;
+
     private void Start()
     {
         var types = System.Enum.GetValues(typeof(TypeObjet)).Cast<TypeObjet>().ToArray();
@@ -49,6 +51,11 @@ public class EnemyController : MonoBehaviour
 
         if (fisted)
         {
+
+            if (deathSound != null)
+            {
+                deathSound.Play();
+            }
             Destroy(gameObject);
 
             if (Type == EnemyType.Grandma)
