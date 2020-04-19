@@ -10,16 +10,24 @@ public class LoadScenes : MonoBehaviour
     private Image _tutorial;
     [SerializeField]
     private GameObject _button;
- 
+
     public void Tutorial()
     {
-        _tutorial.enabled = true;
-        _button.SetActive(true);
+        if (_tutorial != null)
+        {
+            _tutorial.enabled = true;
+            _button.SetActive(true);
+        }
     }
 
     public void StartScene()
     {
         Debug.Log("lol");
         SceneManager.LoadScene("SampleScene");
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadSceneAsync("MainMenu");
     }
 }

@@ -11,6 +11,9 @@ public class DropzoneController : MonoBehaviour
     [SerializeField]
     private AudioSource cashSound;
 
+    [SerializeField]
+    private GameObject _gameOverScreen;
+
     public int _lifePoints = 3;
 
     private void Update()
@@ -81,10 +84,10 @@ public class DropzoneController : MonoBehaviour
 
     }
 
-
-
     private void GameOver()
     {
+        _gameOverScreen.SetActive(true);
+        Time.timeScale = 0;
         Debug.Log("You died !");
     }
 }
