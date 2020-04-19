@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5309523103352686710}
   - component: {fileID: 4399032720645403417}
   - component: {fileID: 5742924046666205180}
+  - component: {fileID: 9187478681002064713}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -102,6 +103,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.54201436, y: 1.0169147}
   m_EdgeRadius: 0
+--- !u!95 &9187478681002064713
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5309523103352686711}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 818b5a14fa009e249bafeb46ff066ff6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5309523103642457438
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,7 +133,7 @@ GameObject:
   - component: {fileID: 5309523103642457425}
   - component: {fileID: 5309523103642457424}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: PlayerVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,12 +191,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 2f58397868108b94a8144837dce4e2a9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2acefabf96022ac4db6f50bfbac4f4c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 2.28, y: 2.01}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -306,7 +326,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.37909353, y: -0.063182354}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -317,5 +337,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.2636445, y: 2.1372805}
   m_EdgeRadius: 0

@@ -29,10 +29,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject itemDisplayer;
 
+    Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -41,6 +44,9 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
+        float currentSpeed = Mathf.Abs(x + y);
+
+        animator.SetFloat("speed", currentSpeed);
 
         Vector2 move = new Vector2(x, y);
 
@@ -53,13 +59,14 @@ public class PlayerController : MonoBehaviour
 
         if (directionLook.x < 0)
         {
+
             _visual.GetComponent<SpriteRenderer>().flipX = true;
 
             var itemPos = itemDisplayer.transform.position;
-            itemPos.x = transform.position.x -0.6f;
+            itemPos.x = transform.position.x - 0.6f;
             itemDisplayer.transform.position = itemPos;
         }
-        else
+        else if (directionLook.x > 0)
         {
             _visual.GetComponent<SpriteRenderer>().flipX = false;
 
@@ -78,6 +85,7 @@ public class PlayerController : MonoBehaviour
         {
             if (!_hasPunched)
             {
+                animator.SetTrigger("Punching");
                 StartCoroutine(Attack());
             }
         }
@@ -105,7 +113,7 @@ public class PlayerController : MonoBehaviour
 
             float pointsWinned = 0;
 
-            switch(currentItem.Value)
+            switch (currentItem.Value)
             {
                 case TypeObjet.Eggs:
                     pointsWinned = .5f;
@@ -134,11 +142,9 @@ public class PlayerController : MonoBehaviour
     private IEnumerator Attack()
     {
         _hasPunched = true;
-        _visual.GetComponent<SpriteRenderer>().sprite = _playerAttack;
         fist.SetActive(true);
         yield return new WaitForSeconds(.5f);
         fist.SetActive(false);
-        _visual.GetComponent<SpriteRenderer>().sprite = _playerNeutral;
         yield return new WaitForSeconds(_punchCooldown);
         _hasPunched = false;
     }
