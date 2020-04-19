@@ -10,6 +10,6 @@ namespace Assets.Scripts.Enums
     {
         Grandma,
         Hipster,
-        //Jogger
+        Jogger
     }
 }
