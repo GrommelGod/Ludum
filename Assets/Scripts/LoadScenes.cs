@@ -23,6 +23,7 @@ public class LoadScenes : MonoBehaviour
     public void StartScene()
     {
         Debug.Log("lol");
+        Time.timeScale = 1;
         SceneManager.LoadScene("SampleScene");
     }
 
