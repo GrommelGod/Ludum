@@ -13,10 +13,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject fist;
     [SerializeField]
-    private Sprite _playerAttack;
-    [SerializeField]
-    private Sprite _playerNeutral;
-    [SerializeField]
     private float _punchCooldown = .5f;
 
     private bool _hasPunched = false;

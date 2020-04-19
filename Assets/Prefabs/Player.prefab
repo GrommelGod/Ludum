@@ -49,11 +49,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27854c6a211ac6a4da4b78ef7ee5ba1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 10
   _visual: {fileID: 5309523103642457438}
   fist: {fileID: 6591769814669692247}
-  _playerAttack: {fileID: 21300000, guid: 27944278693c0024387a91ee3969d057, type: 3}
-  _playerNeutral: {fileID: 21300000, guid: 2f58397868108b94a8144837dce4e2a9, type: 3}
   _punchCooldown: 0.2
   itemDisplayer: {fileID: 5667253625279109710}
 --- !u!50 &4399032720645403417
