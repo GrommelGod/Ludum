@@ -9,7 +9,7 @@ namespace Assets.Scripts.Enums
     public enum EnemyType
     {
         Grandma,
-        //Hipster,
+        Hipster,
         //Jogger
     }
 }
