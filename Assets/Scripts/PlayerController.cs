@@ -18,6 +18,14 @@ public class PlayerController : MonoBehaviour
     private bool _hasPunched = false;
     private TypeObjet? currentItem = null;
 
+    public bool HasItem
+    {
+        get
+        {
+            return currentItem != null;
+        }
+    }
+
     private Vector2 directionLook;
 
     Rigidbody2D body;
@@ -57,7 +65,7 @@ public class PlayerController : MonoBehaviour
         {
 
             var scale = transform.localScale;
-            scale.x = -1;
+            scale.x = -0.75f;
             transform.localScale = scale;
 
             var itemPos = itemDisplayer.transform.position;
@@ -68,7 +76,7 @@ public class PlayerController : MonoBehaviour
         {
 
             var scale = transform.localScale;
-            scale.x = 1;
+            scale.x = 0.75f;
             transform.localScale = scale;
 
             var itemPos = itemDisplayer.transform.position;

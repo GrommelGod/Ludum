@@ -8,6 +8,9 @@ public class DropzoneController : MonoBehaviour
     [SerializeField]
     private GameObject[] _lifes;
 
+    [SerializeField]
+    private AudioSource cashSound;
+
     public int _lifePoints = 3;
 
     private void Update()
@@ -53,12 +56,17 @@ public class DropzoneController : MonoBehaviour
 
         if (player != null)
         {
-            player.DeliverItem();
+            if (player.HasItem)
+            {
+                player.DeliverItem();
+                cashSound.Play();
+            }
         }
 
         if (enemy != null)
         {
             Destroy(enemy.gameObject);
+            cashSound.Play();
 
             if (enemy.Type != Assets.Scripts.Enums.EnemyType.Grandma)
             {
@@ -70,6 +78,7 @@ public class DropzoneController : MonoBehaviour
                 }
             }
         }
+
     }
 
 
