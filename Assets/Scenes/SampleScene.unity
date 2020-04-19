@@ -2073,6 +2073,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5802645229867371932, guid: d69eb85f77f387c499e6e8071d88e5f5,
         type: 3}
+    - target: {fileID: 5407162041809144883, guid: 1388335a8b6d2cb4786f9b0ab3d1aad9,
+        type: 3}
+      propertyPath: secondsBetweenSpawn
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5816768133359070999, guid: 1388335a8b6d2cb4786f9b0ab3d1aad9,
         type: 3}
       propertyPath: m_Name

@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Enums;
+using Assets.Scripts.Models;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,27 +23,103 @@ public class EnemySpawnerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        float points = GameStats.Instance.points;
+        float level = points / 15;
+
+        float probaJogger = level * 0.15f;
+        float timeBetweenEnemies = secondsBetweenSpawn - level;
+
+
+        if (timeBetweenEnemies < 2)
+        {
+            timeBetweenEnemies = 2;
+        }
+
+
         timeElapsedSinceLastCreation += Time.deltaTime;
 
-        if (timeElapsedSinceLastCreation > secondsBetweenSpawn)
+
+        if (timeElapsedSinceLastCreation > timeBetweenEnemies)
         {
-            GameObject zone = zones[UnityEngine.Random.Range(0, zones.Length)];
+            int numEnemies = 1;
+            float randomNumber = UnityEngine.Random.value;
 
-            var typesPossible = Enum.GetValues(typeof(EnemyType)).Cast<EnemyType>().ToArray();
-            var chosenType = typesPossible[UnityEngine.Random.Range(0, typesPossible.Length)];
-
-            var enemyPrefab = possiblePrefabs.Where(p => p.name == chosenType.ToString()).FirstOrDefault();
-
-            if (enemyPrefab != null)
+            if (points > 30)
             {
-                GameObject.Instantiate(enemyPrefab, zone.transform.position, Quaternion.identity);
+                if (randomNumber < 0.5f)
+                {
+                    numEnemies = 2;
+                }
             }
+
+            if (points > 150)
+            {
+                if (randomNumber < 0.5f)
+                {
+                    numEnemies = 3;
+                }
+            }
+
+            var typesToCreate = new List<EnemyType>();
+
+            while(typesToCreate.Count < numEnemies)
+            {
+                EnemyType chosenType = EnemyType.Hipster;
+
+                if (typesToCreate.Count > 0)
+                {
+                    var hasJogger = typesToCreate.Count(t => t == EnemyType.Jogger) > 0;
+                    if (hasJogger)
+                    {
+                        float rand2 = UnityEngine.Random.value;
+                        if (rand2 < .5f)
+                        {
+                            typesToCreate.Add(EnemyType.Hipster);
+                        }
+                        else
+                        {
+                            typesToCreate.Add(EnemyType.Grandma);
+
+                        }
+                        continue;
+                    }
+                }
+
+                if (randomNumber < probaJogger)
+                {
+                    chosenType = EnemyType.Jogger;
+                }
+                else
+                {
+                    float rest = 1 - randomNumber;
+                    if (randomNumber < rest / 2)
+                    {
+                        chosenType = EnemyType.Grandma;
+                    }
+                }
+
+                typesToCreate.Add(chosenType);
+            }
+
+            foreach (var chosenType in typesToCreate)
+            {
+                GameObject zone = zones[UnityEngine.Random.Range(0, zones.Length)];
+
+                var enemyPrefab = possiblePrefabs.Where(p => p.name == chosenType.ToString()).FirstOrDefault();
+
+                if (enemyPrefab != null)
+                {
+                    GameObject.Instantiate(enemyPrefab, zone.transform.position, Quaternion.identity);
+                }
+            }
+
 
             timeElapsedSinceLastCreation = 0;
         }

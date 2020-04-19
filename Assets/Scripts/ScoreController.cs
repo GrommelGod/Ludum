@@ -16,7 +16,7 @@ public class ScoreController : MonoBehaviour
 
         float currentScore = GameStats.Instance.points;
 
-        text += currentScore.ToString();
+        text += currentScore.ToString("0.0##");
 
         textComponent.text = text;
 
