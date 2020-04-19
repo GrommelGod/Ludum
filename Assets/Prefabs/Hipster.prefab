@@ -157,6 +157,8 @@ MonoBehaviour:
   speed: 4
   itemPrefab: {fileID: 2583727197443260956, guid: ceb683b72bc10414584eb86e3ab7df77,
     type: 3}
+  _deathSound: {fileID: 2627711174306045999, guid: 11fb9a4250c99d445a00c9ab4dd6550a,
+    type: 3}
 --- !u!50 &2560522297242229260
 Rigidbody2D:
   serializedVersion: 4
