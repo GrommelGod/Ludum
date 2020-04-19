@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Models;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +12,10 @@ public class DropzoneController : MonoBehaviour
 
     private void Update()
     {
-        switch(_lifePoints)
+
+        var lives = GameStats.Instance.lives;
+
+        switch(lives)
         {
             case 3:
                 _lifes[0].SetActive(true);
@@ -55,11 +59,15 @@ public class DropzoneController : MonoBehaviour
         if (enemy != null)
         {
             Destroy(enemy.gameObject);
-            _lifePoints--;
 
-            if(_lifePoints == 0)
+            if (enemy.Type != Assets.Scripts.Enums.EnemyType.Grandma)
             {
-                GameOver();
+                GameStats.Instance.lives--;
+
+                if(GameStats.Instance.lives == 0)
+                {
+                    GameOver();
+                }
             }
         }
     }

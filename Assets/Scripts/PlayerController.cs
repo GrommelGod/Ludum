@@ -60,7 +60,9 @@ public class PlayerController : MonoBehaviour
         if (directionLook.x < 0)
         {
 
-            _visual.GetComponent<SpriteRenderer>().flipX = true;
+            var scale = transform.localScale;
+            scale.x = -1;
+            transform.localScale = scale;
 
             var itemPos = itemDisplayer.transform.position;
             itemPos.x = transform.position.x - 0.6f;
@@ -68,7 +70,10 @@ public class PlayerController : MonoBehaviour
         }
         else if (directionLook.x > 0)
         {
-            _visual.GetComponent<SpriteRenderer>().flipX = false;
+
+            var scale = transform.localScale;
+            scale.x = 1;
+            transform.localScale = scale;
 
             var itemPos = itemDisplayer.transform.position;
             itemPos.x = transform.position.x + 0.6f;
@@ -143,8 +148,11 @@ public class PlayerController : MonoBehaviour
     {
         _hasPunched = true;
         fist.SetActive(true);
-        yield return new WaitForSeconds(.5f);
+        Debug.Log("Punch active");
+        yield return new WaitForSeconds(.2f);
         fist.SetActive(false);
+        Debug.Log("Punch Disabled");
+
         yield return new WaitForSeconds(_punchCooldown);
         _hasPunched = false;
     }

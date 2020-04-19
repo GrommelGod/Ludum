@@ -1,5 +1,8 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Enums;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EnemySpawnerController : MonoBehaviour
@@ -14,7 +17,7 @@ public class EnemySpawnerController : MonoBehaviour
     private GameObject[] zones;
 
     [SerializeField]
-    private GameObject enemyPrefab;
+    private GameObject[] possiblePrefabs;
 
     // Start is called before the first frame update
     void Start()
@@ -29,8 +32,18 @@ public class EnemySpawnerController : MonoBehaviour
 
         if (timeElapsedSinceLastCreation > secondsBetweenSpawn)
         {
-            GameObject zone = zones[Random.Range(0, zones.Length)];
-            GameObject.Instantiate(enemyPrefab, zone.transform.position, Quaternion.identity);
+            GameObject zone = zones[UnityEngine.Random.Range(0, zones.Length)];
+
+            var typesPossible = Enum.GetValues(typeof(EnemyType)).Cast<EnemyType>().ToArray();
+            var chosenType = typesPossible[UnityEngine.Random.Range(0, typesPossible.Length)];
+
+            var enemyPrefab = possiblePrefabs.Where(p => p.name == chosenType.ToString()).FirstOrDefault();
+
+            if (enemyPrefab != null)
+            {
+                GameObject.Instantiate(enemyPrefab, zone.transform.position, Quaternion.identity);
+            }
+
             timeElapsedSinceLastCreation = 0;
         }
     }

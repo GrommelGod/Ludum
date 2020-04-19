@@ -22,5 +22,6 @@ namespace Assets.Scripts.Models
         }
 
         public float points;
+        public int lives = 3;
     }
 }

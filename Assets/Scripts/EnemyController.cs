@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Enums;
+using Assets.Scripts.Models;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,19 +11,21 @@ public class EnemyController : MonoBehaviour
     private GameObject objetTenu;
     private TypeObjet? objetTenuType = null;
 
+    protected EnemyType _type;
+
+    public EnemyType Type
+    {
+        get
+        {
+            return _type;
+        }
+    }
+
     [SerializeField]
     private float speed;
 
     [SerializeField]
     private GameObject itemPrefab;
-
-    public EnemyController(float x, float y)
-    {
-        var pos = transform.position;
-        pos.x = x;
-        pos.y = y;
-        transform.position = pos;
-    }
 
     private void Start()
     {
@@ -47,6 +50,12 @@ public class EnemyController : MonoBehaviour
         if (fisted)
         {
             Destroy(gameObject);
+
+            if (Type == EnemyType.Grandma)
+            {
+                GameStats.Instance.lives--;
+            }
+
             if (objetTenuType != null)
             {
                 var obj = GameObject.Instantiate(itemPrefab, transform.position, Quaternion.identity);
