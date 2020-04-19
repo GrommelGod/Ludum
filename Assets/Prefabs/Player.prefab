@@ -54,6 +54,7 @@ MonoBehaviour:
   fist: {fileID: 6591769814669692247}
   _punchCooldown: 0.2
   itemDisplayer: {fileID: 5667253625279109710}
+  _punchSound: {fileID: 0}
 --- !u!50 &4399032720645403417
 Rigidbody2D:
   serializedVersion: 4
@@ -296,7 +297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4842789896216555765
 Transform:
   m_ObjectHideFlags: 0
