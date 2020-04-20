@@ -20,8 +20,6 @@ public class PowerSpawner : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Timer : " + _timer);
-
         if (!GameStats.Instance._powerUp)
         {
             _timer++;
@@ -38,6 +36,6 @@ public class PowerSpawner : MonoBehaviour
 
     private void RandomTimerMax()
     {
-        _timerMax = Random.Range(600, 1001);
+        _timerMax = Random.Range(800, 1200);
     }
 }

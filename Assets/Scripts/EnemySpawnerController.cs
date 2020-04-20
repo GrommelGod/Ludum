@@ -69,7 +69,7 @@ public class EnemySpawnerController : MonoBehaviour
             {
                 if (randomNumber < 0.6f)
                 {
-                    numEnemies = 3;
+                    numEnemies = 4;
                 }
             }
 
@@ -77,7 +77,7 @@ public class EnemySpawnerController : MonoBehaviour
             {
                 if (randomNumber < 0.3f)
                 {
-                    numEnemies = 3;
+                    numEnemies = 5;
                 }
             }
 
@@ -85,7 +85,7 @@ public class EnemySpawnerController : MonoBehaviour
             {
                 if (randomNumber < 0.3f)
                 {
-                    numEnemies = 4;
+                    numEnemies = 6;
                 }
             }
 

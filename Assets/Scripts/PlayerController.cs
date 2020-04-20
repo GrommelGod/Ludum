@@ -138,7 +138,7 @@ public class PlayerController : MonoBehaviour
             itemDisplayer.GetComponent<SpriteRenderer>().sprite = itemSprite;
 
             Destroy(objet.gameObject);
-            Debug.Log("Currently holding an item");
+            //Debug.Log("Currently holding an item");
         }
     }
     #endregion
@@ -205,14 +205,14 @@ public class PlayerController : MonoBehaviour
     #region SpeedBoost
     public void SpeedUp()
     {
-        speed += 10;
+        speed += 7;
         StartCoroutine(SpeedBoostTimer());
     }
 
     private IEnumerator SpeedBoostTimer()
     {
         yield return new WaitForSecondsRealtime(5f);
-        speed = 20;
+        speed = 18;
     }
     #endregion
 }

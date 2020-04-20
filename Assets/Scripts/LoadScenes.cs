@@ -32,4 +32,9 @@ public class LoadScenes : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("MainMenu");
     }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }

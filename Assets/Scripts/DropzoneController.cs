@@ -21,7 +21,7 @@ public class DropzoneController : MonoBehaviour
 
         var lives = GameStats.Instance.lives;
 
-        switch(lives)
+        switch (lives)
         {
             case 3:
                 _lifes[0].SetActive(true);
@@ -75,7 +75,7 @@ public class DropzoneController : MonoBehaviour
             {
                 GameStats.Instance.lives--;
 
-                if(GameStats.Instance.lives == 0)
+                if (GameStats.Instance.lives == 0)
                 {
                     GameOver();
                 }
@@ -87,7 +87,12 @@ public class DropzoneController : MonoBehaviour
     private void GameOver()
     {
         _gameOverScreen.SetActive(true);
+        //Debug.Log("You died !");
+        StopTime();
+    }
+
+    private void StopTime()
+    {
         Time.timeScale = 0;
-        Debug.Log("You died !");
     }
 }
