@@ -81,6 +81,14 @@ public class EnemySpawnerController : MonoBehaviour
                 }
             }
 
+            if (points > 350)
+            {
+                if (randomNumber < 0.3f)
+                {
+                    numEnemies = 4;
+                }
+            }
+
             var typesToCreate = new List<EnemyType>();
 
             while(typesToCreate.Count < numEnemies)

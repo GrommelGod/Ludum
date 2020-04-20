@@ -38,6 +38,6 @@ public class PowerSpawner : MonoBehaviour
 
     private void RandomTimerMax()
     {
-        _timerMax = Random.Range(300, 601);
+        _timerMax = Random.Range(600, 1001);
     }
 }

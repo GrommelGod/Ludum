@@ -205,14 +205,14 @@ public class PlayerController : MonoBehaviour
     #region SpeedBoost
     public void SpeedUp()
     {
-        speed *= 2;
+        speed += 10;
         StartCoroutine(SpeedBoostTimer());
     }
 
     private IEnumerator SpeedBoostTimer()
     {
         yield return new WaitForSecondsRealtime(5f);
-        speed = 10;
+        speed = 20;
     }
     #endregion
 }

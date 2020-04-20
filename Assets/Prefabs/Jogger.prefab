@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objetTenu: {fileID: 0}
-  speed: 6
+  speed: 7
   itemPrefab: {fileID: 2583727197443260956, guid: ceb683b72bc10414584eb86e3ab7df77,
     type: 3}
   deathSound: {fileID: 0}

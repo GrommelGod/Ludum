@@ -153,6 +153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6838022151440457675}
   - component: {fileID: 6838022151440457674}
+  - component: {fileID: 9086277881729833170}
   m_Layer: 0
   m_Name: New Sprite
   m_TagString: Untagged
@@ -173,7 +174,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6838022150581518003}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 360}
 --- !u!212 &6838022151440457674
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -223,3 +224,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!111 &9086277881729833170
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6838022151440457676}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 903258a6bfab5f3449bca528026ecedb, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 903258a6bfab5f3449bca528026ecedb, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

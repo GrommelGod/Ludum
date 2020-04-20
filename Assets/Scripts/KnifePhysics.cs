@@ -7,7 +7,7 @@ public class KnifePhysics : MonoBehaviour
 {
     void Update()
     {
-        transform.Translate(-5 * Time.deltaTime, 0, 0);
+        transform.Translate(-12.5f * Time.deltaTime, 0, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
