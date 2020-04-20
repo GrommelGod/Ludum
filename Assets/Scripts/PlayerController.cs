@@ -212,7 +212,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator SpeedBoostTimer()
     {
         yield return new WaitForSecondsRealtime(5f);
-        speed = 18;
+        speed = 12;
     }
     #endregion
 }
