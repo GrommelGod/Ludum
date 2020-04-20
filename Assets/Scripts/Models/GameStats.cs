@@ -24,6 +24,7 @@ namespace Assets.Scripts.Models
         public float points;
         public int lives = 3;
         public int _knives = 1;
+        public bool _powerUp = false;
 
         public void Refresh()
         {

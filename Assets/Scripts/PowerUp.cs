@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Models;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class PowerUp : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<PlayerController>().SpeedUp();
+            GameStats.Instance._powerUp = false;
             Destroy(gameObject);
         }
     }

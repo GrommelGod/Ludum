@@ -202,9 +202,17 @@ public class PlayerController : MonoBehaviour
         GameStats.Instance._knives++;
     }
     #endregion
-
+    #region SpeedBoost
     public void SpeedUp()
     {
-
+        speed *= 2;
+        StartCoroutine(SpeedBoostTimer());
     }
+
+    private IEnumerator SpeedBoostTimer()
+    {
+        yield return new WaitForSecondsRealtime(5f);
+        speed = 10;
+    }
+    #endregion
 }
