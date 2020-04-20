@@ -49,9 +49,6 @@ public class EnemyController : MonoBehaviour
         bool fisted = collision.CompareTag("fist");
         bool knife = collision.CompareTag("knife");
 
-        //Debug.Log(fisted);
-        //Debug.Log(knife);
-
         if (fisted || knife)
         {
             if (deathSound != null)

@@ -13,5 +13,11 @@ public class PowerUp : MonoBehaviour
             GameStats.Instance._powerUp = false;
             Destroy(gameObject);
         }
+
+        if(collision.CompareTag("enemy"))
+        {
+            GameStats.Instance._powerUp = false;
+            Destroy(gameObject);
+        }
     }
 }

@@ -28,7 +28,7 @@ public class PowerSpawner : MonoBehaviour
 
             if (_timer > _timerMax)
             {
-                Instantiate(_steroid, _spawns[Random.Range(0, _spawns.Length)].transform.position, _spawns[0].transform.rotation);
+                GameObject.Instantiate(_steroid, _spawns[Random.Range(0, _spawns.Length)].transform.position, _spawns[0].transform.rotation);
                 _timer = 0;
                 GameStats.Instance._powerUp = true;
                 RandomTimerMax();
