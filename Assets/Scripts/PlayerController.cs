@@ -14,6 +14,10 @@ public class PlayerController : MonoBehaviour
     private GameObject fist;
     [SerializeField]
     private float _punchCooldown = .5f;
+    [SerializeField]
+    private GameObject _knife;
+    [SerializeField]
+    private GameObject _knifeUI;
 
     private bool _hasPunched = false;
     private TypeObjet? currentItem = null;
@@ -48,6 +52,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(GameStats.Instance._knives);
+
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
@@ -100,6 +106,25 @@ public class PlayerController : MonoBehaviour
                 animator.SetTrigger("Punching");
                 StartCoroutine(Attack());
             }
+        }
+
+        if (GameStats.Instance._knives > 0)
+        {
+            if (Input.GetButtonDown("Fire2"))
+            {
+                GameStats.Instance._knives--;
+                Instantiate(_knife, transform.position, Quaternion.identity);
+                StartCoroutine(ReloadKnives());
+            }
+        }
+
+        if(GameStats.Instance._knives == 0)
+        {
+            _knifeUI.SetActive(false);
+        }
+        else
+        {
+            _knifeUI.SetActive(true);
         }
     }
     #region TakeItem
@@ -168,6 +193,13 @@ public class PlayerController : MonoBehaviour
 
         yield return new WaitForSeconds(_punchCooldown);
         _hasPunched = false;
+    }
+    #endregion
+    #region ReloadKnives
+    IEnumerator ReloadKnives()
+    {
+        yield return new WaitForSecondsRealtime(3f);
+        GameStats.Instance._knives++;
     }
     #endregion
 }

@@ -23,5 +23,11 @@ namespace Assets.Scripts.Models
 
         public float points;
         public int lives = 3;
+        public int _knives = 1;
+
+        public void Refresh()
+        {
+            _instance = new GameStats();
+        }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Assets.Scripts.Models;
 
 public class LoadScenes : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class LoadScenes : MonoBehaviour
     private Image _tutorial;
     [SerializeField]
     private GameObject _button;
-
+    
     public void Tutorial()
     {
         if (_tutorial != null)
@@ -22,8 +23,8 @@ public class LoadScenes : MonoBehaviour
 
     public void StartScene()
     {
-        Debug.Log("lol");
         Time.timeScale = 1;
+        GameStats.Instance.Refresh();
         SceneManager.LoadScene("SampleScene");
     }
 

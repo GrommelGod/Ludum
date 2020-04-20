@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8857279598362829334}
   m_Layer: 0
   m_Name: Hipster
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +128,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.34334525, y: -0.26842952}
+  m_Offset: {x: -0.34334525, y: -0.09207058}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -139,7 +139,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6613715, y: 0.91836977}
+  m_Size: {x: 0.6613715, y: 1.2710876}
   m_EdgeRadius: 0
 --- !u!114 &-4790183952503837711
 MonoBehaviour:
@@ -157,8 +157,7 @@ MonoBehaviour:
   speed: 4
   itemPrefab: {fileID: 2583727197443260956, guid: ceb683b72bc10414584eb86e3ab7df77,
     type: 3}
-  _deathSound: {fileID: 2627711174306045999, guid: 11fb9a4250c99d445a00c9ab4dd6550a,
-    type: 3}
+  deathSound: {fileID: 0}
 --- !u!50 &2560522297242229260
 Rigidbody2D:
   serializedVersion: 4

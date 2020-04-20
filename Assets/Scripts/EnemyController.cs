@@ -47,11 +47,13 @@ public class EnemyController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         bool fisted = collision.CompareTag("fist");
-        Debug.Log(fisted);
+        bool knife = collision.CompareTag("knife");
 
-        if (fisted)
+        //Debug.Log(fisted);
+        //Debug.Log(knife);
+
+        if (fisted || knife)
         {
-
             if (deathSound != null)
             {
                 deathSound.Play();
