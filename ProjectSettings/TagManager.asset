@@ -6,6 +6,9 @@ TagManager:
   tags:
   - fist
   - spawn
+  - knife
+  - enemy
+  - shelves
   layers:
   - Default
   - TransparentFX

@@ -202,4 +202,9 @@ public class PlayerController : MonoBehaviour
         GameStats.Instance._knives++;
     }
     #endregion
+
+    public void SpeedUp()
+    {
+
+    }
 }

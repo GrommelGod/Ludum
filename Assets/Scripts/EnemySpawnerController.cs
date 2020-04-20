@@ -57,7 +57,7 @@ public class EnemySpawnerController : MonoBehaviour
             int numEnemies = 1;
             float randomNumber = UnityEngine.Random.value;
 
-            if (points > 30)
+            if (points > 50)
             {
                 if (randomNumber < 0.5f)
                 {
@@ -67,7 +67,15 @@ public class EnemySpawnerController : MonoBehaviour
 
             if (points > 150)
             {
-                if (randomNumber < 0.5f)
+                if (randomNumber < 0.6f)
+                {
+                    numEnemies = 3;
+                }
+            }
+
+            if (points > 250)
+            {
+                if (randomNumber < 0.3f)
                 {
                     numEnemies = 3;
                 }
@@ -126,7 +134,6 @@ public class EnemySpawnerController : MonoBehaviour
                     enemyPrefab.GetComponent<EnemyController>().deathSound = chosenType == EnemyType.Grandma ? GrandmaDeathSound : MaleDeathSound;
                 }
             }
-
 
             timeElapsedSinceLastCreation = 0;
         }
