@@ -11,6 +11,9 @@ public class LoadScenes : MonoBehaviour
     private Image _tutorial;
     [SerializeField]
     private GameObject _button;
+
+    [SerializeField]
+    private GameObject _gameOverScreen;
     
     public void Tutorial()
     {
@@ -25,7 +28,16 @@ public class LoadScenes : MonoBehaviour
     {
         Time.timeScale = 1;
         GameStats.Instance.Refresh();
+
+        GameEvents.OnGameOver += GameEvents_OnGameOver;
+
         SceneManager.LoadScene("SampleScene");
+    }
+
+    private void GameEvents_OnGameOver(object sender, System.EventArgs e)
+    {
+        Time.timeScale = 0;
+        SceneManager.LoadScene("GameoverScene");
     }
 
     public void RestartGame()

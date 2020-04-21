@@ -74,25 +74,9 @@ public class DropzoneController : MonoBehaviour
             if (enemy.Type != Assets.Scripts.Enums.EnemyType.Grandma)
             {
                 GameStats.Instance.lives--;
-
-                if (GameStats.Instance.lives == 0)
-                {
-                    GameOver();
-                }
             }
         }
 
     }
 
-    private void GameOver()
-    {
-        _gameOverScreen.SetActive(true);
-        //Debug.Log("You died !");
-        StopTime();
-    }
-
-    private void StopTime()
-    {
-        Time.timeScale = 0;
-    }
 }

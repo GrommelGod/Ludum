@@ -22,7 +22,24 @@ namespace Assets.Scripts.Models
         }
 
         public float points;
-        public int lives = 3;
+        private int _lives = 3;
+
+        public int lives
+        {
+            get
+            {
+                return _lives;
+            }
+            set
+            {
+                _lives = value;
+                if (_lives == 0)
+                {
+                    GameEvents.TriggerGameOver();
+                }
+            }
+        }
+
         public int _knives = 1;
         public bool _powerUp = false;
 
